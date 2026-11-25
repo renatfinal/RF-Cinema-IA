@@ -1,0 +1,6 @@
+{
+  "name": "RF Cinema IA — Estúdio de Curtas",
+  "description": "Professsional AI-powered short film studio and storyboard creator with Gemini API integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

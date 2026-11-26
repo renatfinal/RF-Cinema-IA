@@ -5,13 +5,14 @@ import Navbar from '@/components/Navbar';
 import StudioEditor from '@/components/StudioEditor';
 import StoryboardView from '@/components/StoryboardView';
 import DirectorPlayer from '@/components/DirectorPlayer';
+import ShortsAnimator from '@/components/ShortsAnimator';
 import AiCopilot from '@/components/AiCopilot';
 import ProjectsView from '@/components/ProjectsView';
 import { Scene, CinemaProject } from '@/types/cinema';
 import confetti from 'canvas-confetti';
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'editor' | 'storyboard' | 'player' | 'copilot' | 'projects'>('editor');
+  const [activeTab, setActiveTab] = useState<'editor' | 'storyboard' | 'player' | 'shorts' | 'copilot' | 'projects'>('editor');
   
   const initialProject = (() => {
     try {
@@ -200,6 +201,8 @@ export default function Home() {
         {activeTab === 'player' && (
           <DirectorPlayer scenes={scenes} title={title} style={style} />
         )}
+
+        {activeTab === 'shorts' && <ShortsAnimator />}
 
         {activeTab === 'copilot' && <AiCopilot />}
 

@@ -1,10 +1,10 @@
 'use client';
 
-import { Film, Clapperboard, Play, Bot, FolderOpen, Sparkles, Download } from 'lucide-react';
+import { Film, Clapperboard, Play, Bot, FolderOpen, Sparkles, Download, Video } from 'lucide-react';
 
 interface NavbarProps {
-  activeTab: 'editor' | 'storyboard' | 'player' | 'copilot' | 'projects';
-  setActiveTab: (tab: 'editor' | 'storyboard' | 'player' | 'copilot' | 'projects') => void;
+  activeTab: 'editor' | 'storyboard' | 'player' | 'shorts' | 'copilot' | 'projects';
+  setActiveTab: (tab: 'editor' | 'storyboard' | 'player' | 'shorts' | 'copilot' | 'projects') => void;
   sceneCount: number;
   onExport: () => void;
 }
@@ -27,22 +27,22 @@ export default function Navbar({ activeTab, setActiveTab, sceneCount, onExport }
         </div>
       </div>
 
-      <nav className="flex items-center gap-1.5 bg-[#15152a] p-1.5 rounded-2xl border border-[#30304d]">
+      <nav className="flex items-center gap-1.5 bg-[#15152a] p-1.5 rounded-2xl border border-[#30304d] overflow-x-auto max-w-full">
         <button
           onClick={() => setActiveTab('editor')}
-          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
+          className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
             activeTab === 'editor'
               ? 'bg-gradient-to-r from-[#36e4ff] to-[#a855f7] text-[#070718] shadow-md'
               : 'text-[#aaaac7] hover:text-white hover:bg-[#1c1c35]'
           }`}
         >
           <Clapperboard className="w-4 h-4" />
-          <span>Roteiro & Estúdio</span>
+          <span>Roteiro</span>
         </button>
 
         <button
           onClick={() => setActiveTab('storyboard')}
-          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all relative ${
+          className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all relative shrink-0 ${
             activeTab === 'storyboard'
               ? 'bg-gradient-to-r from-[#36e4ff] to-[#a855f7] text-[#070718] shadow-md'
               : 'text-[#aaaac7] hover:text-white hover:bg-[#1c1c35]'
@@ -59,38 +59,50 @@ export default function Navbar({ activeTab, setActiveTab, sceneCount, onExport }
 
         <button
           onClick={() => setActiveTab('player')}
-          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
+          className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
             activeTab === 'player'
               ? 'bg-gradient-to-r from-[#36e4ff] to-[#a855f7] text-[#070718] shadow-md'
               : 'text-[#aaaac7] hover:text-white hover:bg-[#1c1c35]'
           }`}
         >
           <Play className="w-4 h-4" />
-          <span>Director&apos;s Cut</span>
+          <span>Player</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('shorts')}
+          className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
+            activeTab === 'shorts'
+              ? 'bg-gradient-to-r from-[#36e4ff] to-[#a855f7] text-[#070718] shadow-md'
+              : 'text-[#aaaac7] hover:text-white hover:bg-[#1c1c35]'
+          }`}
+        >
+          <Video className="w-4 h-4" />
+          <span>Vídeos 10-15s</span>
         </button>
 
         <button
           onClick={() => setActiveTab('copilot')}
-          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
+          className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
             activeTab === 'copilot'
               ? 'bg-gradient-to-r from-[#36e4ff] to-[#a855f7] text-[#070718] shadow-md'
               : 'text-[#aaaac7] hover:text-white hover:bg-[#1c1c35]'
           }`}
         >
           <Bot className="w-4 h-4" />
-          <span>Assistente IA</span>
+          <span>IA Co-Pilot</span>
         </button>
 
         <button
           onClick={() => setActiveTab('projects')}
-          className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
+          className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
             activeTab === 'projects'
               ? 'bg-gradient-to-r from-[#36e4ff] to-[#a855f7] text-[#070718] shadow-md'
               : 'text-[#aaaac7] hover:text-white hover:bg-[#1c1c35]'
           }`}
         >
           <FolderOpen className="w-4 h-4" />
-          <span>Meus Projetos</span>
+          <span>Projetos</span>
         </button>
       </nav>
 

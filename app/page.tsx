@@ -199,12 +199,12 @@ export default function Home() {
         )}
 
         {activeTab === 'player' && (
-          <DirectorPlayer scenes={scenes} title={title} style={style} />
+          <DirectorPlayer scenes={scenes} title={title} style={style} goToShorts={() => setActiveTab('shorts')} />
         )}
 
-        {activeTab === 'shorts' && <ShortsAnimator />}
+        {activeTab === 'shorts' && <ShortsAnimator goToCopilot={() => setActiveTab('copilot')} />}
 
-        {activeTab === 'copilot' && <AiCopilot />}
+        {activeTab === 'copilot' && <AiCopilot goToProjects={() => setActiveTab('projects')} />}
 
         {activeTab === 'projects' && (
           <ProjectsView

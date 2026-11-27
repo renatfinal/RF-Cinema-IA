@@ -265,6 +265,22 @@ export default function StoryboardView({ scenes, setScenes, title, style, goToPl
           })}
         </div>
       )}
+
+      {scenes.length > 0 && (
+        <div className="bg-[#15152a] border border-[#30304d] rounded-2xl p-6 shadow-xl flex items-center justify-between mt-8">
+          <div>
+            <span className="text-xs text-[#36e4ff] font-bold uppercase tracking-wider">Próximo Passo do Projeto</span>
+            <h4 className="text-sm font-bold text-white">Visualizar Direção e Player Cinematográfico (Director&apos;s Cut)</h4>
+          </div>
+          <button
+            onClick={goToPlayer}
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#36e4ff] to-[#a855f7] text-[#070718] font-black text-xs hover:opacity-95 transition-all shadow-lg flex items-center gap-2 shrink-0"
+          >
+            <span>Ir para Player / Director&apos;s Cut</span>
+            <span>→</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

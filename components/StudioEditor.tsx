@@ -132,18 +132,18 @@ export default function StudioEditor({
           <p className="text-xs text-[#aaaac7]">
             Tem apenas uma premissa? Descreva sua ideia abaixo e deixe a IA redigir um roteiro cinematográfico completo para você.
           </p>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <input
               type="text"
               value={ideaPrompt}
               onChange={(e) => setIdeaPrompt(e.target.value)}
-              placeholder="Ex: Um astronauta descobre uma antiga livraria flutuando em órbita de Júpiter..."
+              placeholder="Ex: Um astronauta descobre uma antiga livraria..."
               className="flex-1 bg-[#0e0e20] border border-[#383853] rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6b6b8c] focus:outline-none focus:border-[#36e4ff] transition-all"
             />
             <button
               onClick={handleGenerateScript}
               disabled={isGeneratingScript}
-              className="px-5 py-2.5 rounded-xl bg-[#a855f7] hover:bg-[#9333ea] text-white font-bold text-sm transition-all flex items-center gap-2 disabled:opacity-50 shrink-0"
+              className="px-4 py-2.5 rounded-xl bg-[#a855f7] hover:bg-[#9333ea] text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 disabled:opacity-50 shrink-0"
             >
               {isGeneratingScript ? (
                 <>
@@ -153,7 +153,7 @@ export default function StudioEditor({
               ) : (
                 <>
                   <Sparkles className="w-4 h-4" />
-                  <span>Criar Roteiro</span>
+                  <span>CRIAR</span>
                 </>
               )}
             </button>
